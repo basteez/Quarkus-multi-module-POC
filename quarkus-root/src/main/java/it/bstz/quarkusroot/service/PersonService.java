@@ -1,4 +1,4 @@
-package it.bstz.service;
+package it.bstz.quarkusroot.service;
 
 import it.bstz.repository.model.Person;
 import it.bstz.repository.repository.PersonRepository;

@@ -60,7 +60,7 @@
         </dependency>
         <dependency>
             <groupId>it.bstz</groupId>
-            <artifactId>service</artifactId>
+            <artifactId>quarkus-root</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
     </dependencies>

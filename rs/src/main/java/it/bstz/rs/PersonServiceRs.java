@@ -1,8 +1,8 @@
 package it.bstz.rs;
 
 
+import it.bstz.quarkusroot.service.PersonService;
 import it.bstz.repository.model.Person;
-import it.bstz.service.PersonService;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;

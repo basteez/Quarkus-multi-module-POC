@@ -9,9 +9,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>repository</module>
-        <module>service</module>
         <module>rs</module>
         <module>quarkus-root</module>
+        <module>quarkus-root2</module>
     </modules>
     <properties>
         <compiler-plugin.version>3.8.1</compiler-plugin.version>

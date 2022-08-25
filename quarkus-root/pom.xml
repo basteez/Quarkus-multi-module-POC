@@ -8,7 +8,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
+    <version>1.0.0-SNAPSHOT</version>
     <artifactId>quarkus-root</artifactId>
 
     <properties>
@@ -16,6 +16,27 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>it.bstz</groupId>
+            <artifactId>repository</artifactId>
+        </dependency>
+
+        <!--org.acme.repository dependent modules must include this dependency, otherwise they will not compile-->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm-panache</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <!-- -->
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-arc</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -28,79 +49,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
             </plugin>
-
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>${surefire-plugin.version}</version>
-            </plugin>
-
-            <plugin>
-                <groupId>io.quarkus</groupId>
-                <artifactId>quarkus-maven-plugin</artifactId>
-                <version>${quarkus-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>build</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
-
-    <dependencies>
-
-        <dependency>
-            <groupId>it.bstz</groupId>
-            <artifactId>repository</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>it.bstz</groupId>
-            <artifactId>service</artifactId>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>it.bstz</groupId>
-            <artifactId>rs</artifactId>
-            <scope>compile</scope>
-        </dependency>
-
-
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-hibernate-orm-panache</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-jdbc-h2</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-smallrye-openapi</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-swagger-ui</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-arc</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-resteasy-jsonb</artifactId>
-        </dependency>
-
-
-
-
-    </dependencies>
 
 </project>
