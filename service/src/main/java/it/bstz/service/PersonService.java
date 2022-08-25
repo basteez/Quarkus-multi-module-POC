@@ -5,6 +5,7 @@ import it.bstz.repository.repository.PersonRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @ApplicationScoped
@@ -17,6 +18,7 @@ public class PersonService {
         return personRepository.listAll();
     }
 
+    @Transactional
     public void persist(Person p){
         personRepository.persist(p);
     }
