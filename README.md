@@ -46,3 +46,9 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 You can then execute your native executable with: `./target/multi-module-poc-1.0.0-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
+
+
+## NOTES
+* To launch both quarkus-root and quarkus-root2 in parallel, use
+```mvn compile quarkus:dev -T 2.0C -Ddebug=false```
+* To specify which module to launch execute ```mvn quarkus:dev quarkus-root --also-make -Ddebug=false```
